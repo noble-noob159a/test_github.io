@@ -1,7 +1,3 @@
----
-title: My GitHub Page
----
-
 # Welcome to My Website
 
 This site is built using **Markdown** and **GitHub Pages**.
@@ -14,5 +10,8 @@ This site is built using **Markdown** and **GitHub Pages**.
 ## Projects
 - Project 1
 - Project 2
-
+- Project 1
+- Project 2
+- Project 1
+- Project 2
 [Visit my GitHub](https://github.com/noble-noob159a)
