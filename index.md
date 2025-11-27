@@ -1,3 +1,8 @@
+---
+layout: page
+title: About
+permalink: /about/
+---
 # Welcome to My Website
 
 This site is built using **Markdown** and **GitHub Pages**.
