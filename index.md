@@ -13,5 +13,5 @@ This site is built using **Markdown** and **GitHub Pages**.
 - Project 1
 - Project 2
 - Project 1
-- Project 2
+- Project 2  
 [Visit my GitHub](https://github.com/noble-noob159a)
