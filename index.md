@@ -1,22 +1,23 @@
 ---
-layout: page
-title: About
-permalink: /about/
+layout: default
+title: Home
+permalink: /
 ---
-# Welcome to My Website
+{% capture my_header %}{% include nav.md %}{% endcapture %}
+{{ my_header | markdownify }}
+
+# Welcome to My Research Portfolio
 
 This site is built using **Markdown** and **GitHub Pages**.
 
 ## About Me
-- I love coding
-- I use Linux
-- I study AI
+- **Field:** Artificial Intelligence & Computer Vision
+- **OS:** Linux Enthusiast
+- **Focus:** Deep Learning optimizations
 
 ## Projects
-- Project 1
-- Project 2
-- Project 1
-- Project 2
-- Project 1
-- Project 2  
+* [**Science Report Case Study**](/report) (Click to see the template)
+* **Project 1:** Detectron2 Implementation
+* **Project 2:** OpenCV Object Tracking
+
 [Visit my GitHub](https://github.com/noble-noob159a)
