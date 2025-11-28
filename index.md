@@ -1,10 +1,3 @@
----
-layout: default
-title: Home
-permalink: /
----
-{% capture my_header %}{% include nav.md %}{% endcapture %}
-{{ my_header | markdownify }}
 
 # Welcome to My Research Portfolio
 
