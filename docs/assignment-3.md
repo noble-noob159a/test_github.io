@@ -4,7 +4,7 @@
 
 > **Colab Notebook:** <a target="_blank" href="https://colab.research.google.com/github/phamtranminhtri/SEML31/blob/main/notebooks/assignment-3.ipynb">   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/> </a>
 
-![Cover](./image/3-cover.png)
+![Cover](./image/3-cover.jpg)
 
 ## Overview
 **Dataset:** [Cards Image Dataset](https://www.kaggle.com/datasets/gpiosenka/cards-image-datasetclassification?select=cards.csv)
