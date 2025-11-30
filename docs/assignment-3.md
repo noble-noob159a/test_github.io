@@ -34,8 +34,10 @@
 ## Choosing Pretrained Models
 We use ResNet (ResNet18, ResNet34, ResNet50) and EfficientNet (EfficientNet-B0, EfficientNet-B3) as backbone networks to extract features and perform model training.
 - ResNet18 architecture
+
 ![ResNet18](./image/resnet18.png)
 - EfficientNet-B0 architecture
+
 ![EfficientNet](./image/efficientNet_b0.png)
 
 ## Training result
