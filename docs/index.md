@@ -6,7 +6,7 @@ Machine Learning (CO3117) assignments, group TN01, team SEML31.
 
 **Landing pages for the assignments:**
 
-3. [**Assignment 3 page**](https://noble-noob159a.github.io/test_github.io/assignment-3.md)
+3. [**Assignment 3 page**](https://noble-noob159a.github.io/test_github.io/assignment-3.html)
 
 
 
