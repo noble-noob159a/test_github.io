@@ -7,9 +7,9 @@
 ![Cover](./image/3-cover.jpg)
 
 ## Overview
-**Dataset:** [Cards Image Dataset](https://www.kaggle.com/datasets/gpiosenka/cards-image-datasetclassification?select=cards.csv)  
-    + Image classification dataset.
-    + Contains 8154 images of playing cards (52 standard cards + joker).  
+- **Dataset:** [Cards Image Dataset](https://www.kaggle.com/datasets/gpiosenka/cards-image-datasetclassification?select=cards.csv)  
+   + Image classification dataset.
+   + Contains 8154 images of playing cards (52 standard cards + joker).  
 - Given an image of a playing card, we need to classify it into one of the 53 distinct classes.
 - **Multi-class classification model:**
     + **Input:** An RGB image of a playing card.
@@ -20,17 +20,19 @@
 - The dataset is divided into Train, Validation, and Test sets.
 - All images have a consistent shape of `(224, 224)` with 3 color channels (RGB).
 - There are **53 classes** in total, covering all standard playing cards and the joker.
+- Some sample data from the trainning set:
 ![Sample Images](./image/3_sample_cards.png)
 - Label distribution across the training, validation, and test sets
 ![Label Distribution](./image/3_train_dis.png)
+![Label Distribution](./image/3_val_dis.png)
+![Label Distribution](./image/3_test_dis.png)
 - Color distribution (RGB) across the dataset
 ![Red Distribution](./image/3_red_dis.png)
 ![Red Distribution](./image/3_green_dis.png)
 ![Red Distribution](./image/3_blue_dis.png)
 
-
-## Choosing pretrained models
-Using ResNet (resnet18/resnet34/resnet50) and EfficientNet (efficientnet_b0/efficientnet_b3) to extract feature and perform traning 
+## Choosing Pretrained Models
+We use ResNet (ResNet18, ResNet34, ResNet50) and EfficientNet (EfficientNet-B0, EfficientNet-B3) as backbone networks to extract features and perform model training.
 - ResNet18 architecture
 ![ResNet18](./image/resnet18.png)
 - EfficientNet-B0 architecture
@@ -65,4 +67,11 @@ The table below summarizes the performance (accuracy, precision, recall, and f1-
 
 The **ResNet18** model trained **end-to-end** with an **MLP** classifier achieved the highest performance with an F1-score of **0.9696**.
 
-![Training Result Table](./image/3_result_table.png)
+
+## Sample Visual Evaluations on the Test Dataset
+We run our best model (ResNet18) on random samples from the test dataset and visualize the results.
+
+![Training Result Table](./image/3_result_viz.png)
+
+## Summary
+This project applies pretrained CNN models to classify 53 types of playing cards, achieving strong performance with ResNet18 fine-tuned end-to-end, reaching an F1-score of 0.9696. While the results are highly accurate, the model still shows limitations in generalizing to visually similar card classes. Future work will focus on data augmentation, handling class confusion, and exploring lightweight models for faster real-world deployment.
