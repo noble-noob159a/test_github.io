@@ -9,8 +9,8 @@
 ## Overview
 - **Dataset:** [Cards Image Dataset](https://www.kaggle.com/datasets/gpiosenka/cards-image-datasetclassification?select=cards.csv)  
    + Image classification dataset.
-   + Contains 8154 images of playing cards (52 standard cards + joker).  
-- Given an image of a playing card, we need to classify it into one of the 53 distinct classes.
+   + Contains 8154 images of playing cards.  
+- Given an image of a playing card, we need to classify it into one of the 53 distinct classes (52 standard playing card classes and the Joker).
 - **Multi-class classification model:**
     + **Input:** An RGB image of a playing card.
     + **Output:** The class label (e.g., 'ace of spades', 'queen of hearts', 'joker').
@@ -42,30 +42,32 @@ We use ResNet (ResNet18, ResNet34, ResNet50) and EfficientNet (EfficientNet-B0, 
 
 ## Training result
 
-We experimented with several state-of-the-art Convolutional Neural Network (CNN) architectures as the backbone for feature extraction, combined with different classifiers.
+We experimented with several pretrained model as the backbone for feature extraction, combined with different classifiers.
 
 **Backbone Models:**
 1.  **ResNet**: `resnet18`, `resnet34`, `resnet50`
 2.  **EfficientNet**: `efficientnet_b0`, `efficientnet_b3`
 
 **Classifiers & Configurations:**
-1.  **Feature Extraction (Frozen Backbone)**: We trained simple classifiers on top of the extracted features.
-    * **Logistic Regression** (L2 penalty)
-    * **Random Forest** (n_estimators=150)
+1.  **Head-classifier Fine-tuning (Frozen Backbone)**: We fine-tuned only the MLP classifier while keeping the backbone frozen.
 2.  **End-to-End Fine-tuning**: We fine-tuned the entire network with an **MLP** classifier attached.
 
 **Results:**
 
-The table below summarizes the performance (accuracy, precision, recall, and f1-score) of the various configurations.
+The table below summarizes the performance (accuracy, precision, recall, and f1-score) of the various configurations (click [here](https://colab.research.google.com/github/phamtranminhtri/SEML31/blob/main/notebooks/assignment-3.ipynb#scrollTo=2xWqQfHzUXKQ) for more details)
 
 | Base Model | Classifier | Config | Accuracy | Precision | Recall | F1-Score |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | **resnet18** | **MLP** | **end_to_end** | **0.9698** | **0.9766** | **0.9698** | **0.9696** |
-| resnet50 | MLP | end_to_end | 0.9689 | 0.9764 | 0.9689 | 0.9686 |
 | resnet34 | MLP | end_to_end | 0.9585 | 0.9666 | 0.9585 | 0.9582 |
-| efficientnet_b3 | Logistic Regression | l2 | 0.6208 | 0.6353 | 0.6208 | 0.6141 |
-| resnet50 | Logistic Regression | l2 | 0.6415 | 0.6488 | 0.6415 | 0.6295 |
-| resnet18 | Random Forest | 150 | 0.3849 | 0.4224 | 0.3849 | 0.3691 |
+| resnet50 | MLP | end_to_end | 0.9585 | 0.9689 | 0.9585 | 0.9589 |
+| efficientnet_b0 | MLP | end_to_end | 0.8981 | 0.9143 | 0.8981 | 0.8953 |
+| efficientnet_b3 | MLP | end_to_end | 0.9321 | 0.9439 | 0.9321 | 0.9296 |
+| resnet18 | MLP | head_classifier | 0.5396 | 0.5790 | 0.5396 | 0.5193 |
+| resnet34 | MLP | head_classifier | 0.4604 | 0.5289 | 0.4604 | 0.4325 |
+| resnet50 | MLP | head_classifier | 0.5585 | 0.5921 | 0.5585 | 0.5332 |
+| efficientnet_b0 | MLP | head_classifier | 0.5472 | 0.6181 | 0.5472 | 0.5319 |
+| efficientnet_b3 | MLP | head_classifier | 0.5509 | 0.5974 | 0.5509 | 0.5339 |
 
 The **ResNet18** model trained **end-to-end** with an **MLP** classifier achieved the highest performance with an F1-score of **0.9696**.
 
